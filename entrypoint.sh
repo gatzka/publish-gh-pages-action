@@ -9,7 +9,7 @@ cd $BUILD_DIR
 echo "#################################################"
 echo "Now deploying to GitHub Pages..."
 echo "github repository ${GITHUB_REPOSITORY}"
-REMOTE_REPO="https://${GITHUB_ACTOR}@github.com/${GITHUB_REPOSITORY}.git" && \
+REMOTE_REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
 REPONAME="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)" && \
 OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)" && \
 REMOTE_BRANCH="gh-pages" && \
