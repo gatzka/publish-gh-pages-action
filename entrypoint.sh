@@ -9,7 +9,7 @@ cd $BUILD_DIR
 echo "#################################################"
 echo "Now deploying to GitHub Pages..."
 echo "github repository ${GITHUB_REPOSITORY}"
-REMOTE_REPO="https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}.git" && \
+REMOTE_REPO="https://github.com/${GITHUB_REPOSITORY}.git" && \
 REPONAME="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)" && \
 OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)" && \
 REMOTE_BRANCH="gh-pages" && \
@@ -19,6 +19,7 @@ git init && \
 git config user.name "${GITHUB_ACTOR}" && \
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
 git clone --branch=gh-pages ${REMOTE_REPO} gh-pages && \
+echo "REMOTE_REPO: ${REMOTE_REPO=}" && \
 cd gh-pages && \
 if [ -d "${GH_PAGES_SUBDIR}" ]; then
   git rm -rf ${GH_PAGES_SUBDIR}
