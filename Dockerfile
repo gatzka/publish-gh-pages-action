@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.17
 
 LABEL "maintainer"="Stephan Gatzka<stephan.gatzka@gmail.com>"
 LABEL "repository"="http://github.com/gatzka/ghaction-deploy-ghpages"
